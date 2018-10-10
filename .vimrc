@@ -29,3 +29,14 @@ endif
 
 set iskeyword+=$
 
+filetype indent on
+autocmd filetype perl set cinkeys=0{,0},0),0#,!<Tab>,;,:,o,O,e
+autocmd FileType perl set indentkeys=!<Tab>,o,O
+autocmd FileType perl map <Tab> i<Tab><Esc>^
+autocmd FileType perl set cinoptions=:0,(0,u0,W1s
+
+autocmd filetype python set autoindent nosmartindent
+autocmd filetype python set smarttab
+autocmd filetype python set expandtab
+autocmd filetype python set shiftwidth=4
+autocmd filetype python set softtabstop=4
