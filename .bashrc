@@ -1,4 +1,10 @@
 # If not running interactively, don't do anything
+# Source global definitions
+
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
 case $- in
     *i*) ;;
       *) return;;
