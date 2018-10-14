@@ -1,0 +1,6 @@
+@define-color border-grey #444;
+
+decoration {
+  border: 1px solid shade(@border-grey, 1);
+  background: shade(@border-grey, 1);
+}

@@ -38,16 +38,16 @@ autocmd FileType perl set cinkeys=0{,0},0),0#,!<Tab>,;,:,o,O,e
 autocmd FileType perl set indentkeys=!<Tab>,o,O
 autocmd FileType perl map <Tab> i<Tab><Esc>^
 autocmd FileType perl set cinoptions=:0,(0,u0,W1s
-autocmd FileType perl nnoremap <M-j> i<TAB>print "\n";<ESC>$hhhi
-autocmd FileType perl inoremap <M-j> <TAB>print "\n";<ESC>$hhhi
-autocmd FileType perl vnoremap <M-j> <ESC>i<TAB>print "\n";<ESC>$hhhi
+autocmd FileType perl nnoremap <M-;> i<TAB>print "\n";<ESC>$hhhi
+autocmd FileType perl inoremap <M-;> <TAB>print "\n";<ESC>$hhhi
+autocmd FileType perl vnoremap <M-;> <ESC>i<TAB>print "\n";<ESC>$hhhi
 autocmd FileType perl set shiftwidth=2
 autocmd FileType perl set softtabstop=2
 
 if has('unix')
-  autocmd FileType perl nnoremap j i<TAB>print "\n";<ESC>$hhhi
-  autocmd FileType perl inoremap j <TAB>print "\n";<ESC>$hhhi
-  autocmd FileType perl vnoremap j <ESC>i<TAB>print "\n";<ESC>$hhhi
+  autocmd FileType perl nnoremap ; i<TAB>print "\n";<ESC>$hhhi
+  autocmd FileType perl inoremap ; <TAB>print "\n";<ESC>$hhhi
+  autocmd FileType perl vnoremap ; <ESC>i<TAB>print "\n";<ESC>$hhhi
 endif
 
 autocmd FileType python set autoindent nosmartindent
