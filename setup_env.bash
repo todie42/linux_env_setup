@@ -5,10 +5,16 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+if [ $# -eq 0 ]
+  then
+    echo "No arguments supplied"
+    echo "Must supply either server or ws as first argument"
+fi
+
+
 myuser='dsmyers'
 myhome="/home/$myuser"
-cp ./google.repo /etc/yum.repos.d/
-yum install -y unzip curl wget perl vim epel-release gvim ansible python-pip
+yum install -y unzip curl wget perl vim epel-release ansible python-pip
 yum -y update
 
 cp ./.vimrc $myhome
@@ -22,6 +28,11 @@ chown -R $myuser: $myhome
 cp ./comments.templates $myhome/.vim/perl-support/templates/comments.templates
 cp ./idioms.templates $myhome/.vim/perl-support/templates/idioms.templates
 
-
+if [ $1 = 'ws' ];
+  then
+    cp ./google.repo /etc/yum.repos.d/
+    yum install -y gvim
+    
+fi
 
 
