@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root" 
+   exit 1
+fi
+
 myhome='/home/myerds'
 myuser='myerds'
 cp ./google.repo /etc/yum.repos.d/
