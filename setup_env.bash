@@ -5,10 +5,10 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-myhome='/home/myerds'
-myuser='myerds'
+myuser='dsmyers'
+myhome="/home/$myuser"
 cp ./google.repo /etc/yum.repos.d/
-yum install -y epel-release gvim ansible python-pip
+yum install -y unzip curl wget perl vim epel-release gvim ansible python-pip
 yum -y update
 
 cp ./.vimrc $myhome
