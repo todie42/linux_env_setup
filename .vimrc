@@ -55,3 +55,20 @@ autocmd FileType python set smarttab
 autocmd FileType python set expandtab
 autocmd FileType python set shiftwidth=4
 autocmd FileType python set softtabstop=4
+
+
+" set: paste automatically
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+
+
+
