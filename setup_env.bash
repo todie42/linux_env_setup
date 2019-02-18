@@ -5,11 +5,12 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-if [ $# -eq 0 ]
-  then
-    echo "No arguments supplied"
+if [ $# -eq 0 ]; then
+    echo "No arguments provided"
     echo "Must supply either server or ws as first argument"
+    exit 1
 fi
+
 
 
 myuser='dsmyers'
@@ -32,7 +33,12 @@ if [ $1 = 'ws' ];
   then
     cp ./google.repo /etc/yum.repos.d/
     yum install -y gvim
-    
+    yum install -y google-chrome-stable
+    unzip ./nohotcorner-master.zip
+    mv ./nohotcorner-master /home/$myuser/.local/share/gnome-shell/extensions/nohotcorner@azuri.free.fr
+    chown -R $myuser: /home/$myuser/.local/share/gnome-shell/extensions/nohotcorner@azuri.free.fr
+    cp ./gtk.css /home/$myuser/.config/gtk-3.0/
+    chown $myuser: /home/$myuser/.config/gtk-3.0/gtk.css
 fi
 
 
